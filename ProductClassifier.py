@@ -18,12 +18,12 @@ for product in AllProducts:
 ProductList=[]
 for link in ProductLinks:
 
-	driver.get(link)
+    driver.get(link)
     product_name=driver.find_element_by_xpath('//*[@id="__next"]/div[2]/div[1]/div[2]/div[2]/div/h1/div').text
     name=str(product_name).split(" ")
-	try:    
+    try:    
     	Ingredient=driver.find_element_by_xpath('//*[@id="__next"]/div[2]/div[1]/div[3]/div[2]/div/ul/li[1]/span/strong').text
-	except:
+    except:
     	Ingredient=N/A
     prod={'ProductName':" ".join(name[:-2]), 
      	'Ingredients':Ingredient}
